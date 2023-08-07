@@ -1,0 +1,35 @@
+﻿@page
+@model ApprovalProcess.Pages.Logics.DeptLogic.IndexModel
+@{
+}
+<h3> </h3>
+<a href="/Logics/DeptLogic/Create" class="btn btn-primary">Create</a>
+
+
+@if(Model.departments.Count > 0)
+{
+
+             
+<div>
+    <table class="table table-bordered">
+
+        <thead>
+            <tr>
+                <th>  List of Departments</th>
+            </tr>
+        </thead>
+            <tbody>
+            @foreach (var item in Model.departments)
+            {  <tr> 
+                    <td> @item.Name </td>
+               </tr>
+            }
+        </tbody>
+    
+        </table>
+</div>  }
+            else
+            {
+            <h3>No data exists! </h3>
+            }
+

@@ -1,0 +1,56 @@
+﻿@page
+@model ApprovalProcess.Pages.Logics.CreateModel
+@{
+}
+
+
+
+<div>
+    <form method="post" class="m-1">
+        <div>
+            <label asp-for="@Model.RequestObj.RequesterName" class="form-control"></label>
+            <input asp-for="@Model.RequestObj.RequesterName" class="form-control" />
+        </div>
+
+        <div>
+
+           <label asp-for="@Model.RequestObj.DepartmentId" class="form-control"></label>
+           <select asp-for="@Model.RequestObj.Departments.Name" asp-items="Model.Department">
+               <option>Select Department </option>
+           </select>
+            
+            @*<input asp-for="@Model.RequestObj.RequesterDepartment" class="form-control" />*@
+       </div>
+        <div>
+            <label asp-for="@Model.RequestObj.RequestDescription" class="form-control"></label>
+            <input asp-for="@Model.RequestObj.RequestDescription" class="form-control" />
+        </div>
+        <div>
+            <label asp-for="@Model.RequestObj.RequestAmount" class="form-control"></label>
+            <input asp-for="@Model.RequestObj.RequestAmount" class="form-control" />
+        </div>
+
+        @*<div>
+
+            <label asp-for="@Model.RequestObj.RequestedDate" class="form-control"></label>
+            <input asp-for="@Model.RequestObj.RequestedDate" readonly class="form-control" />
+        </div>*@
+        <div>
+            <label asp-for="@Model.RequestObj.SupportingDoc" class="form-control"></label>
+            <input asp-for="@Model.RequestObj.SupportingDoc" class="form-control" />
+        </div>
+        @*<div>
+            <label asp-for="@Model.RequestObj.RequestStatus"></label>
+         
+        <select asp-for="RequestObj.RequestStatus">
+            <option value="Approved">Approved</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Not Approved">Not Approved</option>
+        </select>
+        </div>*@
+
+        <br />
+        <div> <input type="submit" name="name" value="Submit" class="btn btn-primary" /> </div>
+    </form>
+
+</div>
