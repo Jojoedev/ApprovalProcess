@@ -27,13 +27,26 @@ namespace ApprovalProcess.Pages.Logics.DeptLogic
 
         public ActionResult OnPost(Department department)
         {
+            CheckDuplication(department);
             if (ModelState.IsValid)
             {
                 _context.Departments.Add(department);
                 _context.SaveChanges();
-                return RedirectToAction("DeptLogic/Index");
+                
             }
-            return NotFound();
+            return RedirectToAction("Logics/DeptLogic/Index");
+        }
+
+
+        public void CheckDuplication(Department Dept)
+        {
+             var existDept = _context.Departments.Where(n => n.Name == Dept.Name);
+            if(existDept.Any())
+            {
+                throw new Exception("Duplicate exists");
+            }
         }
     }
+
+    
 }

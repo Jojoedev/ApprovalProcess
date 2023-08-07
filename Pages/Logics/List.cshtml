@@ -8,7 +8,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Id</th>
+            @*<th>Id</th>*@
             <th>Requester</th>
             <th>Department</th>
             <th>Description</th>
@@ -24,9 +24,9 @@
         @foreach (var item in Model.RequestObj)
         {
         <tr>
-            <td>@item.RequestId</td>
+            @*<td>@item.RequestId</td> *@
             <td>@item.RequesterName</td>
-            <td>@item.Departments </td>
+            <td>@item.DepartmentId </td>
             <td>@item.RequestDescription</td>
             <td>@item.RequestAmount</td>
             <td>@item.RequestedDate </td>

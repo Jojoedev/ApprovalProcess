@@ -14,7 +14,7 @@
 
         <div>
 
-           <label asp-for="@Model.RequestObj.DepartmentId" class="form-control"></label>
+           <label asp-for="@Model.RequestObj.Departments.Name" class="form-control"></label>
            <select asp-for="@Model.RequestObj.Departments.Name" asp-items="Model.Department">
                <option>Select Department </option>
            </select>
