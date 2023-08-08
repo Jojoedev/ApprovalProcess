@@ -28,10 +28,7 @@ namespace ApprovalProcess.Pages
             //             select n).ToList();
 
             RequestObj = _Context.Requests.ToList();
-
-            
-            
-           
+                       
         }
     }
 }

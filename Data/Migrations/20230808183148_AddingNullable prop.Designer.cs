@@ -4,14 +4,16 @@ using ApprovalProcess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ApprovalProcess.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230808183148_AddingNullable prop")]
+    partial class AddingNullableprop
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -117,6 +119,7 @@ namespace ApprovalProcess.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int?>("DepartmentId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<decimal>("RequestAmount")
@@ -137,7 +140,6 @@ namespace ApprovalProcess.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SupportingDoc")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("RequestId");
@@ -284,9 +286,11 @@ namespace ApprovalProcess.Data.Migrations
 
             modelBuilder.Entity("ApprovalProcess.Models.Request", b =>
                 {
-                    b.HasOne("ApprovalProcess.Models.Department", "Department")
+                    b.HasOne("ApprovalProcess.Models.Department", "Departments")
                         .WithMany()
-                        .HasForeignKey("DepartmentId");
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

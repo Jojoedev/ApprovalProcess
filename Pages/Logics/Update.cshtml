@@ -6,18 +6,22 @@
 <div>
     <form method="post" class="m-1">
         <div>
-            <label asp-for="@Model.request.RequestId" class="form-control"></label>
-            <input asp-for="@Model.request.RequestId" readonly class="form-control" />
+            <label asp-for="@Model.request.RequestId" hidden class="form-control"></label>
+            <input asp-for="@Model.request.RequestId" hidden class="form-control" />
         </div>
         <div>
             <label asp-for="@Model.request.RequesterName" class="form-control"></label>
             <input asp-for="@Model.request.RequesterName" class="form-control" />
         </div>
+
+        
         <div>
-            <label asp-for="@Model.request.Departments.Name" class="form-control"></label>
-            <select asp-for="@Model.request.Departments.Name" asp-items="Model.department">
+            @* <label asp-for="@Model.request.DepartmentId" class="form-control"></label>*@
+
+            <select asp-for="@Model.request.Department.Id" asp-items="@Model.department">
                 <option>Select Department</option>
             </select>
+            <div> <input asp-for="@Model.request.Department.Name" class="form-control" /> </div>
         </div>
 
         <div>

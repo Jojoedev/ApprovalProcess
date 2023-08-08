@@ -13,21 +13,19 @@ namespace ApprovalProcess.Models
         [Required]
         [Display(Name ="Name of Requester")]
         public string RequesterName { get; set; }
-        [Required]
-        public int DepartmentId { get; set; }
+        
+        public int? DepartmentId { get; set; }
         
         [Display(Name ="Name of Department")]
-        [Required]
-        public virtual Department Departments { get; set; }
-        [Required]
-        //public string RequesterDepartment { get; set; } //Dropdown list
+        public virtual Department Department { get; set; }
+       
+        
+        [Required]    
         [Display(Name ="Request Description")]
-
         public string RequestDescription { get; set; }
         
         [Required]
         [Display(Name ="Amount")]
-        [DataType(DataType.Currency, ErrorMessage = "Incorrect input type")]
         public decimal RequestAmount { get; set; }
 
                 
@@ -35,8 +33,10 @@ namespace ApprovalProcess.Models
         public DateTime RequestedDate { get; set; }
 
 
+        [Required]
         [Display(Name ="Supporting Documents")]
         public string SupportingDoc { get; set; }
+        
         [Display(Name ="Request Status")]
         public string RequestStatus {get; set;} 
        

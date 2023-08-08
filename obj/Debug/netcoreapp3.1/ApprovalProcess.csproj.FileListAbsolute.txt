@@ -97,3 +97,4 @@ C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\ne
 C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\Razor\Pages\Logics\DeptLogic\Create.cshtml.g.cs
 C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\Razor\Pages\Logics\DeptLogic\Delete.cshtml.g.cs
 C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\Razor\Pages\Logics\Update.cshtml.g.cs
+C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\Razor\Pages\Logics\Delete.cshtml.g.cs

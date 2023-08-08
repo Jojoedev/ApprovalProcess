@@ -5,49 +5,48 @@
 
 
 
-<div>
+<div class="table-bordered">
     <form method="post" class="m-1">
+        <div asp-validation-summary="All" class=" text-danger"></div>
+        @*<div>
+            <label asp-for="@Model.RequestObj.RequestId" class="form-control"></label>
+            <input asp-for="@Model.RequestObj.RequestId" readonly class="form-control" />
+            <span asp-validation-for="@Model.RequestObj.RequestId"></span>
+        </div>*@
+
+
+
         <div>
             <label asp-for="@Model.RequestObj.RequesterName" class="form-control"></label>
-            <input asp-for="@Model.RequestObj.RequesterName" class="form-control" />
+            <input asp-for="@Model.RequestObj.RequesterName" autocomplete="off" class="form-control" />
+            <span asp-validation-for="@Model.RequestObj.RequesterName"></span>
+        </div>
+
+          <div>
+            <label asp-for="@Model.RequestObj.DepartmentId" class="form-control"></label>
+            <select asp-for="@Model.RequestObj.DepartmentId" asp-items="Model.DeptDropDown">
+                <option>Select Department </option>
+            </select>
         </div>
 
         <div>
-
-           <label asp-for="@Model.RequestObj.Departments.Name" class="form-control"></label>
-           <select asp-for="@Model.RequestObj.Departments.Name" asp-items="Model.Department">
-               <option>Select Department </option>
-           </select>
-            
-            @*<input asp-for="@Model.RequestObj.RequesterDepartment" class="form-control" />*@
-       </div>
-        <div>
             <label asp-for="@Model.RequestObj.RequestDescription" class="form-control"></label>
-            <input asp-for="@Model.RequestObj.RequestDescription" class="form-control" />
+            <input asp-for="@Model.RequestObj.RequestDescription" autocomplete="off" class="form-control" />
+            <span asp-validation-for="@Model.RequestObj.RequestDescription"></span>
         </div>
         <div>
             <label asp-for="@Model.RequestObj.RequestAmount" class="form-control"></label>
-            <input asp-for="@Model.RequestObj.RequestAmount" class="form-control" />
+            <input asp-for="@Model.RequestObj.RequestAmount" autocomplete="off" class="form-control" />
+            <span asp-validation-for="@Model.RequestObj.RequestAmount"></span>
         </div>
 
-        @*<div>
 
-            <label asp-for="@Model.RequestObj.RequestedDate" class="form-control"></label>
-            <input asp-for="@Model.RequestObj.RequestedDate" readonly class="form-control" />
-        </div>*@
         <div>
             <label asp-for="@Model.RequestObj.SupportingDoc" class="form-control"></label>
-            <input asp-for="@Model.RequestObj.SupportingDoc" class="form-control" />
+            <input asp-for="@Model.RequestObj.SupportingDoc" autocomplete="off" class="form-control" />
+            <span asp-validation-for="@Model.RequestObj.SupportingDoc"></span>
         </div>
-        @*<div>
-            <label asp-for="@Model.RequestObj.RequestStatus"></label>
-         
-        <select asp-for="RequestObj.RequestStatus">
-            <option value="Approved">Approved</option>
-            <option value="In Progress">In Progress</option>
-            <option value="Not Approved">Not Approved</option>
-        </select>
-        </div>*@
+
 
         <br />
         <div> <input type="submit" name="name" value="Submit" class="btn btn-primary" /> </div>

@@ -29,11 +29,11 @@ namespace ApprovalProcess.Pages.Logics
         [BindProperty]
         public Request RequestObj { get; set; }
 
-        public SelectList Department {get; set;}
+        public SelectList DeptDropDown {get; set;}
 
         public ActionResult OnGet()
         {
-            Department = new SelectList(_Context.Departments.ToList(), "Id", "Name");
+            DeptDropDown = new SelectList(_Context.Departments.ToList(), "Id", "Name");
             return Page();
         }
        
@@ -49,8 +49,9 @@ namespace ApprovalProcess.Pages.Logics
                 _Context.SaveChanges();
                 RedirectToPage("/Logics/List");
             }
-
-            return RedirectToPage("/Logics/List");
+            //DeptDropDown = new SelectList(_Context.Departments.ToList(), "Id", "Name");
+           return RedirectToPage("/Logics/List");
+            //return Page();
             
         }
 
