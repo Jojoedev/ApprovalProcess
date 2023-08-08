@@ -19,7 +19,7 @@ namespace ApprovalProcess.Pages
             _Context = context;
         }
 
-
+        public Department department { get; set; }
         [BindProperty]
         public List<Request> RequestObj { get; set; }
         public void OnGet()
@@ -28,8 +28,8 @@ namespace ApprovalProcess.Pages
             //             select n).ToList();
 
             RequestObj = _Context.Requests.ToList();
-            
 
+            
             
            
         }

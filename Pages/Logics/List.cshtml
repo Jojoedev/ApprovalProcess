@@ -32,7 +32,9 @@
             <td>@item.RequestedDate </td>
             <td>@item.SupportingDoc</td>
             <td>@item.RequestStatus</td>
-        </tr>
+            <td> <a href="/Logics/Update?id=@item.RequestId" class="btn btn-outline-primary">Edit</a> </td>
+            <td> <a href="/Delete?@item.RequestId" class="btn btn-outline-primary">Delete</a> </td>
+        </tr> 
         }
 
     </tbody>

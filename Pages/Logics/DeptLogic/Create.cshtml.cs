@@ -34,7 +34,7 @@ namespace ApprovalProcess.Pages.Logics.DeptLogic
                 _context.SaveChanges();
                 
             }
-            return RedirectToAction("Logics/DeptLogic/Index");
+            return RedirectToPage("Index");
         }
 
 
