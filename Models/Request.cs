@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -32,10 +34,20 @@ namespace ApprovalProcess.Models
         [Display(Name ="Date of Request")]
         public DateTime RequestedDate { get; set; }
 
+        public int? VendorId { get; set; }
+        [Display(Name ="Vendor")]
+        public virtual Vendor Vendor { get; set; }
+
 
         [Required]
-        [Display(Name ="Supporting Documents")]
+        [Display(Name ="Source Documents")]
         public string SupportingDoc { get; set; }
+
+       // [Required]
+        [Display(Name = "File")]
+        [NotMapped]
+        public IFormFile Image { get; set; }
+
         
         [Display(Name ="Request Status")]
         public string RequestStatus {get; set;} 

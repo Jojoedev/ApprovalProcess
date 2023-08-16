@@ -29,12 +29,14 @@ namespace ApprovalProcess
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
+                options.UseLazyLoadingProxies().UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDefaultIdentity<Employee>(options => options.SignIn.RequireConfirmedAccount = true)
+                
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            
+
+            //services.AddMvc().AddRazorPagesOptions(option => option.Conventions.AddPageRoute("/Logics/RequestLogic/List", ""));
             
             services.AddRazorPages();
         }

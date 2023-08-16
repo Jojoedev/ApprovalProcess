@@ -1,0 +1,46 @@
+﻿@page
+@model ApprovalProcess.Pages.Logics.VendorLogic.IndexModel
+@{
+}
+<h4>List of Vendors </h4>
+<div> <a href="/Logics/VendorLogic/Create">Create new Vendor</a> </div>
+
+@if(Model.Vendors.Count > 0)
+{ 
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <td> Name </td>
+                <td> Address </td>
+                <td> Contact Person </td>
+                <td> Telephone </td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Vendors)
+            {
+                <tr>
+                    
+                    <td>@item.VendorName</td>
+                    <td>@item.Address</td>
+                    <td>@item.ContactPerson</td>
+                    <td>@item.Phone</td>
+                    <td> <a href="/Logics/VendorLogic/Edit">Edit</a> </td>
+                    <td> <a href="/Logics/VendorLogic/Details">Details</a> </td>
+                    <td> <a href="/Logics/VendorLogic/Delete">Delete</a> </td>
+                    
+                    
+            </tr> 
+            }
+        </tbody>
+
+    </table>
+    <div>  </div>
+</div> 
+}
+            else
+            {
+                <h3>No List exists!</h3>
+            }
+

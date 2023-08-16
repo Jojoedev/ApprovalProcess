@@ -7,6 +7,7 @@ using ApprovalProcess.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace ApprovalProcess.Pages
 {
@@ -20,6 +21,7 @@ namespace ApprovalProcess.Pages
         }
 
         public Department department { get; set; }
+        public Vendor vendor { get; set; }
         [BindProperty]
         public List<Request> RequestObj { get; set; }
         public void OnGet()
@@ -27,7 +29,10 @@ namespace ApprovalProcess.Pages
             // RequestObj = (from n in _Context.Requests
             //             select n).ToList();
 
-            RequestObj = _Context.Requests.ToList();
+            RequestObj = _Context.Requests
+                .Include(a => a.Vendor)
+                
+                .Include(x => x.Department).ToList();
                        
         }
     }

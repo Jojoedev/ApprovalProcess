@@ -16,5 +16,6 @@ namespace ApprovalProcess.Data
         public DbSet<Request> Requests { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Department> Departments { get; set; }
+        public DbSet<Vendor> Vendors { get; set; }
     }
 }

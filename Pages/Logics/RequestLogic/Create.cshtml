@@ -6,7 +6,7 @@
 
 
 <div class="table-bordered">
-    <form method="post" class="m-1">
+    <form method="post" enctype="multipart/form-data" class="m-1">
         <div asp-validation-summary="All" class=" text-danger"></div>
         @*<div>
             <label asp-for="@Model.RequestObj.RequestId" class="form-control"></label>
@@ -22,13 +22,21 @@
             <span asp-validation-for="@Model.RequestObj.RequesterName"></span>
         </div>
 
-          <div>
+        <div>
             <label asp-for="@Model.RequestObj.DepartmentId" class="form-control"></label>
             <select asp-for="@Model.RequestObj.DepartmentId" asp-items="Model.DeptDropDown">
                 <option>Select Department </option>
             </select>
         </div>
 
+        <div>
+            <label asp-for="@Model.RequestObj.VendorId" class="form-control"></label>
+            <select asp-for="@Model.RequestObj.VendorId" asp-items="Model.VendorsDropdown">
+                <option>
+                    Select Vendor
+                </option>  
+            </select>
+        </div>
         <div>
             <label asp-for="@Model.RequestObj.RequestDescription" class="form-control"></label>
             <input asp-for="@Model.RequestObj.RequestDescription" autocomplete="off" class="form-control" />
@@ -45,6 +53,14 @@
             <label asp-for="@Model.RequestObj.SupportingDoc" class="form-control"></label>
             <input asp-for="@Model.RequestObj.SupportingDoc" autocomplete="off" class="form-control" />
             <span asp-validation-for="@Model.RequestObj.SupportingDoc"></span>
+        </div>
+        <div>
+            <label asp-for="@Model.RequestObj.Image" class="form-control"></label>
+            <div class="custom-file">
+                <input asp-for="@Model.RequestObj.Image" max="100kb" class="custom-file-input" id="customFile" />
+                <label class="custom-file-label" for="customFile">Choose file</label>
+                <span asp-validation-for="@Model.RequestObj.Image"></span>
+            </div>
         </div>
 
 

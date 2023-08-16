@@ -1,0 +1,38 @@
+﻿@page
+@model ApprovalProcess.Pages.Logics.VendorLogic.CreateModel
+@{
+}
+
+<div>
+    <form method="post">
+        <div class="form-group">
+            @*<div>
+                <label asp-for="@Model.Vendors.Id" class="control-label"></label>
+                <input asp-for="@Model.Vendors.Id" class="form-control" />
+            </div>*@
+
+            <div>
+                <label asp-for="@Model.Vendor.VendorName" class="control-label"></label>
+                <input asp-for="@Model.Vendor.VendorName" class="form-control" />
+            </div>
+            <div>
+                <label asp-for="@Model.Vendor.Address" class="control-label"></label>
+                <input asp-for="@Model.Vendor.Address" class="form-control" />
+            </div>
+            <div>
+                <label asp-for="@Model.Vendor.ContactPerson" class="control-label"></label>
+                <input asp-for="@Model.Vendor.ContactPerson" class="form-control" />
+            </div><div>
+                <label asp-for="@Model.Vendor.Phone" class="control-label"></label>
+                <input asp-for="@Model.Vendor.Phone" class="form-control" />
+            </div>
+            <input type="submit" name="name" value="submit" class="btn btn-outline-primary" />
+
+        </div>
+
+    </form>
+
+
+
+
+</div>

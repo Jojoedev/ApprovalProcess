@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using ApprovalProcess.Data;
 using ApprovalProcess.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -18,26 +20,26 @@ namespace ApprovalProcess.Pages.Logics
 
     {
         private readonly ApplicationDbContext _Context;
-        public CreateModel(ApplicationDbContext context)
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        public CreateModel(ApplicationDbContext context, IWebHostEnvironment webHostEnvironment)
         {
             _Context = context;
+            _webHostEnvironment = webHostEnvironment;
         }
-
-      
-        
 
         [BindProperty]
         public Request RequestObj { get; set; }
-
+        public SelectList VendorsDropdown { get; set; }
         public SelectList DeptDropDown {get; set;}
 
         public ActionResult OnGet()
         {
+           // LoadDropDown();
             DeptDropDown = new SelectList(_Context.Departments.ToList(), "Id", "Name");
+            VendorsDropdown = new SelectList(_Context.Vendors.ToList(), "Id", "VendorName");
+
             return Page();
         }
-       
-      
         public ActionResult OnPost(Request RequestObj)
         {
 
@@ -45,15 +47,29 @@ namespace ApprovalProcess.Pages.Logics
 
             if (ModelState.IsValid)
             {
+                if(RequestObj.Image != null)
+                {
+                    string folder = "Image/docs/";
+                    folder += Guid.NewGuid().ToString()+"-"+ RequestObj.Image.FileName;
+                    string FilePath = Path.Combine(_webHostEnvironment.WebRootPath, folder);
+                    
+                    RequestObj.Image.CopyToAsync(new FileStream(FilePath, FileMode.Create));
+                }
+
                 _Context.Add(RequestObj);
                 _Context.SaveChanges();
-                RedirectToPage("/Logics/List");
+                RedirectToPage("/Logics/RequestLogic/List");
             }
             //DeptDropDown = new SelectList(_Context.Departments.ToList(), "Id", "Name");
-           return RedirectToPage("/Logics/List");
+           return RedirectToPage("/Logics/RequestLogic/List");
             //return Page();
             
         }
 
+        public void LoadDropDown()
+        {
+            DeptDropDown = new SelectList(_Context.Departments.ToList(), "Id", "Name");
+            VendorsDropdown = new SelectList(_Context.Vendors.ToList(), "Id", "Name");
+        }
     }
 }
