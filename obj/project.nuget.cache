@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "u1ZG3nLQjKckxIgMGpE+3FTD4tA1fx48pCSPZD8FestoOUGA2ynDxNWox7rb1AUxdRVMQ0Ok5gdHJv6OnT/nbg==",
+  "dgSpecHash": "LSH4wXdnJEUS3kSBRqrMYbdt+Qh9WH2qP9cOVUhScmLba+C5kVYdXQfdbQ4Tvv+pBNsun09IcwqGOMxZHmgwSA==",
   "success": true,
   "projectFilePath": "C:\\Users\\HP\\Desktop\\CSharp projects\\ApprovalProcess\\ApprovalProcess\\ApprovalProcess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\epplus\\4.1.1\\epplus.4.1.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.27\\microsoft.aspnetcore.cryptography.internal.3.1.27.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.27\\microsoft.aspnetcore.cryptography.keyderivation.3.1.27.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\3.1.27\\microsoft.aspnetcore.diagnostics.entityframeworkcore.3.1.27.nupkg.sha512",
@@ -149,5 +150,16 @@
     "C:\\Users\\HP\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'EPPlus 4.1.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "EPPlus",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

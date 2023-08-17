@@ -44,6 +44,7 @@ namespace ApprovalProcess.Pages.Logics
         {
 
             RequestObj.RequestedDate = DateTime.Now;
+           
 
             if (ModelState.IsValid)
             {
@@ -58,6 +59,7 @@ namespace ApprovalProcess.Pages.Logics
 
                 _Context.Add(RequestObj);
                 _Context.SaveChanges();
+                Statics.ExportToExcel.ToExcel();
                 RedirectToPage("/Logics/RequestLogic/List");
             }
             //DeptDropDown = new SelectList(_Context.Departments.ToList(), "Id", "Name");

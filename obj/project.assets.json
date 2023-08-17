@@ -23,6 +23,15 @@
           "lib/netstandard1.5/Castle.Core.dll": {}
         }
       },
+      "EPPlus/4.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/net40/EPPlus.dll": {}
+        },
+        "runtime": {
+          "lib/net40/EPPlus.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/3.1.27": {
         "type": "package",
         "compile": {
@@ -2282,6 +2291,22 @@
         "lib/netstandard1.5/Castle.Core.dll",
         "lib/netstandard1.5/Castle.Core.xml",
         "readme.txt"
+      ]
+    },
+    "EPPlus/4.1.1": {
+      "sha512": "UYnF9q+XuJJCZc77RG4mQCqYhVwg4I8VgoDWO8m78mu11/GpjDR1Wt1JiVolDojt56r6y3jPEMcMfloKDh1JHQ==",
+      "type": "package",
+      "path": "epplus/4.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Readme.md",
+        "epplus.4.1.1.nupkg.sha512",
+        "epplus.nuspec",
+        "lib/net35/EPPlus.dll",
+        "lib/net35/EPPlus.xml",
+        "lib/net40/EPPlus.XML",
+        "lib/net40/EPPlus.dll"
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/3.1.27": {
@@ -7701,6 +7726,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "EPPlus >= 4.1.1",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 3.1.27",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.27",
       "Microsoft.AspNetCore.Identity.UI >= 3.1.27",
@@ -7748,6 +7774,10 @@
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
         "dependencies": {
+          "EPPlus": {
+            "target": "Package",
+            "version": "[4.1.1, )"
+          },
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
             "target": "Package",
             "version": "[3.1.27, )"
@@ -7794,5 +7824,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.411\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'EPPlus 4.1.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "EPPlus",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

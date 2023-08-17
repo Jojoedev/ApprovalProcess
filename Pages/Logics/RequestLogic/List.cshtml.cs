@@ -28,12 +28,11 @@ namespace ApprovalProcess.Pages
         {
             // RequestObj = (from n in _Context.Requests
             //             select n).ToList();
-
+            
+            
             RequestObj = _Context.Requests
                 .Include(a => a.Vendor)
-                
                 .Include(x => x.Department).ToList();
-                       
         }
     }
 }

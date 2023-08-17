@@ -55,6 +55,11 @@
             <span asp-validation-for="@Model.RequestObj.SupportingDoc"></span>
         </div>
         <div>
+            <label asp-for="@Model.RequestObj.RequestStatus" hidden class="form-control"></label>
+            <input asp-for="@Model.RequestObj.RequestStatus" hidden autocomplete="off" class="form-control" />
+            
+        </div>
+        <div>
             <label asp-for="@Model.RequestObj.Image" class="form-control"></label>
             <div class="custom-file">
                 <input asp-for="@Model.RequestObj.Image" max="100kb" class="custom-file-input" id="customFile" />
