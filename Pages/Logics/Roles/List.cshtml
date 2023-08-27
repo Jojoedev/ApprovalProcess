@@ -1,0 +1,31 @@
+﻿@page
+@model ApprovalProcess.Pages.Logics.Roles.ListModel
+@{
+}
+
+
+<h3>List of Roles</h3>
+<a href="/Logics/Roles/Create" class=" btn btn-primary">Create</a>
+
+@if (Model.Roles.Count > 0)
+{
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    <tbody>
+        @foreach (var item in @Model.Roles)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+            </tr>
+        }
+
+    </tbody>
+</table>   }
+            else
+            {
+                <h4>No Role exists in the Database</h4>
+            }

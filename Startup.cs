@@ -33,7 +33,7 @@ namespace ApprovalProcess
                     Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDefaultIdentity<Employee>(options => options.SignIn.RequireConfirmedAccount = true)
-                
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             //services.AddMvc().AddRazorPagesOptions(option => option.Conventions.AddPageRoute("/Logics/RequestLogic/List", ""));
