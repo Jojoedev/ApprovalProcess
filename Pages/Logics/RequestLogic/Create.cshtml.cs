@@ -50,11 +50,18 @@ namespace ApprovalProcess.Pages.Logics
             {
                 if(RequestObj.Image != null)
                 {
+                    var image = RequestObj.Image;
+
                     string folder = "Image/docs/";
-                    folder += Guid.NewGuid().ToString()+"-"+ RequestObj.Image.FileName;
+                    folder += Guid.NewGuid().ToString()+"-"+ image.FileName;
                     string FilePath = Path.Combine(_webHostEnvironment.WebRootPath, folder);
                     
-                    RequestObj.Image.CopyToAsync(new FileStream(FilePath, FileMode.Create));
+                    image.CopyToAsync(new FileStream(FilePath, FileMode.Create));
+                    
+                    //OR
+
+                   // FileStream fileStream = new FileStream(FilePath, FileMode.Create);
+                    //image.CopyToAsync(fileStream);
                 }
 
                 _Context.Add(RequestObj);
