@@ -15,7 +15,7 @@ namespace ApprovalProcess.Pages.Logics
 {
     /*[Authorize(Policy="RequireAdmin")]*/
 
-
+    [Authorize(Roles = "IT, Accounts")]
     public class CreateModel : PageModel
 
     {

@@ -180,3 +180,4 @@ C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\ne
 C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\Razor\Pages\Logics\Roles\List.cshtml.g.cs
+C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\Razor\Pages\Logics\Roles\Create.cshtml.g.cs

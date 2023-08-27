@@ -4,12 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using ApprovalProcess.Data;
 using ApprovalProcess.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ApprovalProcess.Pages.Logics
 {
+    [Authorize(Roles = "IT")]
     public class UpdateModel : PageModel
     {
         private readonly ApplicationDbContext _context;
