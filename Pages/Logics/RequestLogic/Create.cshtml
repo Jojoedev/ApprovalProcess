@@ -4,7 +4,6 @@
 }
 
 
-
 <div class="table-bordered">
     <form method="post" enctype="multipart/form-data" class="m-1">
         <div asp-validation-summary="All" class=" text-danger"></div>
@@ -24,14 +23,14 @@
 
         <div>
             <label asp-for="@Model.RequestObj.DepartmentId" class="form-control"></label>
-            <select asp-for="@Model.RequestObj.DepartmentId" asp-items="Model.DeptDropDown">
+            <select asp-for="@Model.RequestObj.DepartmentId" asp-items="Model.Deptdropdown">
                 <option>Select Department </option>
             </select>
         </div>
 
         <div>
             <label asp-for="@Model.RequestObj.VendorId" class="form-control"></label>
-            <select asp-for="@Model.RequestObj.VendorId" asp-items="Model.VendorsDropdown">
+            <select asp-for="@Model.RequestObj.VendorId" asp-items="Model.Vendordropdown">
                 <option>
                     Select Vendor
                 </option>  
@@ -54,11 +53,16 @@
             <input asp-for="@Model.RequestObj.SupportingDoc" autocomplete="off" class="form-control" />
             <span asp-validation-for="@Model.RequestObj.SupportingDoc"></span>
         </div>
+
         <div>
-            <label asp-for="@Model.RequestObj.RequestStatus" hidden class="form-control"></label>
-            <input asp-for="@Model.RequestObj.RequestStatus" hidden autocomplete="off" class="form-control" />
-            
+            <label asp-for="@Model.RequestObj.StatusId" class="form-control"></label>
+            <select asp-for="@Model.RequestObj.StatusId" asp-items="Model.StatusDropDown">
+                <option>
+                    Select Status
+                </option>
+            </select>
         </div>
+
         <div>
             <label asp-for="@Model.RequestObj.Image" class="form-control"></label>
             <div class="custom-file">

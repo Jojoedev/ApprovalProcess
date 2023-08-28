@@ -20,19 +20,21 @@ namespace ApprovalProcess.Pages
             _Context = context;
         }
 
-        public Department department { get; set; }
-        public Vendor vendor { get; set; }
+        
+        public Department Department { get; set; }
+        public Vendor Vendor { get; set; }
+        public Status Status { get; set; }
+
+
         [BindProperty]
         public List<Request> RequestObj { get; set; }
         public void OnGet()
         {
-            // RequestObj = (from n in _Context.Requests
-            //             select n).ToList();
-            
-            
-            RequestObj = _Context.Requests
+                 RequestObj = _Context.Requests
                 .Include(a => a.Vendor)
-                .Include(x => x.Department).ToList();
+                .Include(x => x.Department)
+                .Include(y => y.Status)
+                .ToList();
         }
     }
 }

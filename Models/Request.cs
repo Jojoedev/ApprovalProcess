@@ -43,16 +43,17 @@ namespace ApprovalProcess.Models
         [Display(Name ="Source Documents")]
         public string SupportingDoc { get; set; }
 
-       // [Required]
+       
         [Display(Name = "File")]
         [NotMapped]
         public IFormFile Image { get; set; }
 
         
         [Display(Name ="Request Status")]
-        public string RequestStatus {get; set;} 
-       
+        public int? StatusId { get; set; }
+        public virtual Status Status {get; set;}
 
+        public string Remark { get; set; }
 
     }
         

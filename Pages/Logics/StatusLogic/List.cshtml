@@ -1,0 +1,30 @@
+﻿@page
+@model ApprovalProcess.Pages.Logics.StatusLogic.ListModel
+@{
+}
+
+<h4>List of Status</h4>
+<a href="/Logics/StatusLogic/Create" class="btn btn-outline-primary">Create</a>
+
+@if (Model.Status.Count > 0)
+{
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Status Item</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Status)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td> <a href="/Logics/StatusLogic/Edit?id=@item.Id" class="btn btn-outline-secondary">Edit</a> </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{ <h4>No Data exists!</h4>}

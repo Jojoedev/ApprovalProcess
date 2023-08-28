@@ -4,9 +4,9 @@
 }
 
 <div>
-    <form method="post" class="m-1">
+    <form method="post" class="form-group">
         <div>
-            <label asp-for="@Model.request.RequestId" hidden class="form-control"></label>
+            <label asp-for="@Model.request" hidden class="form-control"></label>
             <input asp-for="@Model.request.RequestId" hidden class="form-control" />
         </div>
         <div>
@@ -14,19 +14,27 @@
             <input asp-for="@Model.request.RequesterName" class="form-control" />
         </div>
 
-        
-        <div>
-            @* <label asp-for="@Model.request.DepartmentId" class="form-control"></label>*@
 
-            <select asp-for="@Model.request.Department.Id" asp-items="@Model.department">
+        <div>
+             <label asp-for="@Model.request.DepartmentId" class="form-control"></label>
+
+            <select asp-for="@Model.request.DepartmentId" class="form-control" asp-items="Model.Deptdropdown">
                 <option>Select Department</option>
             </select>
-            <div> <input asp-for="@Model.request.Department.Name" class="form-control" /> </div>
+
+        </div>
+        <div>
+             <label asp-for="@Model.request.VendorId" class="form-control"></label>
+
+            <select asp-for="@Model.request.VendorId" class="form-control" asp-items="Model.Vendordropdown">
+                <option>Select Vendor</option>
+            </select>
+
         </div>
 
         <div>
             <label asp-for="@Model.request.RequestedDate" class="form-control"></label>
-            <input asp-for="@Model.request.RequestedDate" readonly class="form-control" />
+            <input asp-for="@Model.request.RequestedDate"  readonly class="form-control" />
         </div>
         <div>
             <label asp-for="@Model.request.RequestDescription" class="form-control"></label>
@@ -39,7 +47,19 @@
 
         <div>
             <label asp-for="@Model.request.SupportingDoc" class="form-control"></label>
-            <input asp-for="@Model.request.SupportingDoc" class="form-control" />
+            <input asp-for="@Model.request.SupportingDoc"  class="form-control" />
+        </div>
+
+        <div>
+            <label asp-for="@Model.request.StatusId" class="form-control"></label>
+            <select asp-for="@Model.request.StatusId" class="form-control" asp-items="Model.StatusDropDown" >
+                <option>Select Status</option>
+            </select>
+        </div>
+
+        <div>
+            <label asp-for="@Model.request.Remark" class="form-control"></label>
+            <input asp-for="@Model.request.Remark" class="form-control" />
         </div>
 
 

@@ -23,8 +23,9 @@ namespace ApprovalProcess.Pages.Logics.DeptLogic
 
         public Department department { get; set; }
 
-        public void OnGet()
+        public ActionResult OnGet()
         {
+            return Page();
         }
 
         public ActionResult OnPost(Department department)

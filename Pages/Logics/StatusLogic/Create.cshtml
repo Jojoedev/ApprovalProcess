@@ -1,0 +1,16 @@
+﻿@page
+@model ApprovalProcess.Pages.Logics.StatusLogic.CreateModel
+@{
+}
+
+<h4>Create Status Item</h4>
+
+<form method="post" class="form-group">
+    <div>
+        <label asp-for="@Model.Status.Name" class="control-label"></label>
+        <input asp-for="@Model.Status.Name" class="form-control" />
+    </div>
+
+    <input type="submit" class="btn btn-primary" />
+</form>
+<a href="/Logics/StatusLogic/List" class="btn btn-outline-primary">Back to List</a>

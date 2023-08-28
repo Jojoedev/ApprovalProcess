@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ApprovalProcess.Pages.Logics
 {
-    [Authorize(Roles = "IT")]
+    [Authorize(Roles = "IT, HR-Request Preparer, CTO")]
     public class DeleteModel : PageModel
     {
         private readonly ApplicationDbContext _context;

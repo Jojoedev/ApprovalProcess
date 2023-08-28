@@ -9,15 +9,11 @@
         <li class="nav-item">
             <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
         </li>
-        <li class="nav-item">
-            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
-                <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-            </form>
-        </li>
+
         <li class="nav-item">
             <a class="nav-link text-dark" asp-area="" asp-page="/Logics/Roles/List">Roles</a>
         </li>
-    <li class="nav-item">
+        <li class="nav-item">
             <a class="nav-link text-dark" asp-area="" asp-page="/Logics/RequestLogic/Create">Raise PO</a>
         </li>
         <li class="nav-item">
@@ -28,6 +24,16 @@
         </li>
         <li class="nav-item">
             <a class="nav-link text-dark" asp-area="" asp-page="/Logics/VendorLogic/Index">Vendor List</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-page="/Logics/StatusLogic/List">Status List</a>
+        </li>
+
+
+        <li class="nav-item">
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+            </form>
         </li>
 
     }

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using ApprovalProcess.Data;
+using ApprovalProcess.Data.Migrations;
 using ApprovalProcess.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
@@ -15,7 +16,7 @@ namespace ApprovalProcess.Pages.Logics
 {
     /*[Authorize(Policy="RequireAdmin")]*/
 
-    [Authorize(Roles = "IT, Accounts")]
+    [Authorize(Roles = "IT, HR-Request Preparer,CTO")]
     public class CreateModel : PageModel
 
     {
@@ -29,26 +30,30 @@ namespace ApprovalProcess.Pages.Logics
 
         [BindProperty]
         public Request RequestObj { get; set; }
-        public SelectList VendorsDropdown { get; set; }
-        public SelectList DeptDropDown {get; set;}
+
+        public SelectList Deptdropdown { get; set; }
+        public SelectList Vendordropdown { get; set; }
+        
+        public SelectList StatusDropDown {get; set;}
 
         public ActionResult OnGet()
         {
-           // LoadDropDown();
-            DeptDropDown = new SelectList(_Context.Departments.ToList(), "Id", "Name");
-            VendorsDropdown = new SelectList(_Context.Vendors.ToList(), "Id", "VendorName");
-
+           LoadDropDown();
+            
             return Page();
         }
         public ActionResult OnPost(Request RequestObj)
         {
 
             RequestObj.RequestedDate = DateTime.Now;
-           
+            
+            RequestObj.Status.Name = "Pending";
+                       
 
             if (ModelState.IsValid)
             {
-                if(RequestObj.Image != null)
+                RequestObj.Status.Name = "Pending";
+                if (RequestObj.Image != null)
                 {
                     var image = RequestObj.Image;
 
@@ -77,8 +82,10 @@ namespace ApprovalProcess.Pages.Logics
 
         public void LoadDropDown()
         {
-            DeptDropDown = new SelectList(_Context.Departments.ToList(), "Id", "Name");
-            VendorsDropdown = new SelectList(_Context.Vendors.ToList(), "Id", "Name");
+            Deptdropdown = new SelectList(_Context.Departments.ToList(), "Id", "Name");
+            Vendordropdown = new SelectList(_Context.Vendors.ToList(), "Id", "VendorName");
+            StatusDropDown = new SelectList(_Context.Statuses.ToList(), "Id", "Name");
+
         }
     }
 }
