@@ -4,14 +4,16 @@ using ApprovalProcess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ApprovalProcess.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230829034118_FirstApprover")]
+    partial class FirstApprover
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -109,22 +111,6 @@ namespace ApprovalProcess.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("ApprovalProcess.Models.FirstApprover", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("FirstApprovers");
-                });
-
             modelBuilder.Entity("ApprovalProcess.Models.Request", b =>
                 {
                     b.Property<int>("RequestId")
@@ -185,6 +171,10 @@ namespace ApprovalProcess.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -192,6 +182,8 @@ namespace ApprovalProcess.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Statuses");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Status");
                 });
 
             modelBuilder.Entity("ApprovalProcess.Models.Vendor", b =>
@@ -356,6 +348,13 @@ namespace ApprovalProcess.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("ApprovalProcess.Models.FirstApprover", b =>
+                {
+                    b.HasBaseType("ApprovalProcess.Models.Status");
+
+                    b.HasDiscriminator().HasValue("FirstApprover");
                 });
 
             modelBuilder.Entity("ApprovalProcess.Models.Request", b =>

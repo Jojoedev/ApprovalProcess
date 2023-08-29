@@ -18,5 +18,6 @@ namespace ApprovalProcess.Data
         public DbSet<Department> Departments { get; set; }
         public DbSet<Vendor> Vendors { get; set; }
         public DbSet<Status> Statuses { get; set; }
+        public DbSet<FirstApprover> FirstApprovers { get; set; }
     }
 }

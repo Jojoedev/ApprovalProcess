@@ -183,3 +183,5 @@ C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\ne
 C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\ApprovalProcess.dll
 C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\ApprovalProcess.pdb
 C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\ApprovalProcess.genruntimeconfig.cache
+C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\Razor\Pages\Logics\FApproverLogic\List.cshtml.g.cs
+C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\Razor\Pages\Logics\FApproverLogic\Create.cshtml.g.cs

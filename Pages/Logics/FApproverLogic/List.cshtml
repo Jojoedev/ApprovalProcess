@@ -1,0 +1,28 @@
+﻿@page
+@model ApprovalProcess.Pages.Logics.FApproverLogic.ListModel
+@{
+}
+<div><a href="/Logics/FApprover/Create" class="btn btn-outline-primary">Create</a> </div>
+
+@if (Model.FirstApprover.Count > 0)
+{
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.FirstApprover)
+        {
+            <tr>
+                <td>@item.Name</td>
+            </tr>
+        }
+    </tbody>
+    </table>
+}
+   else
+    {
+    <h4>Not Data exists</h4>
+   }

@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace ApprovalProcess.Models
 {
-    public class Status : BaseClass
+    public class BaseClass
     {
-        
+        public int Id { get; set; }
+
+        [Required]
+        public string Name { get; set; }
     }
 }

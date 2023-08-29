@@ -55,6 +55,11 @@ namespace ApprovalProcess.Models
 
         public string Remark { get; set; }
 
+        public int? FirstApproverId { get; set; }
+        public virtual FirstApprover FirstApprover { get; set; }
+
+
+
     }
         
 }
