@@ -3,8 +3,9 @@
 @{
 }
 
+<h4>Raise new Purchase Order</h4>
 
-<div class="table-bordered">
+<div class="table table-bordered">
     <form method="post" enctype="multipart/form-data" class="m-1">
         <div asp-validation-summary="All" class=" text-danger"></div>
         @*<div>
@@ -74,7 +75,13 @@
 
 
         <br />
-        <div> <input type="submit" name="name" value="Submit" class="btn btn-primary" /> </div>
+        <div>
+            <input type="submit" name="name" value="Submit" class="btn btn-primary" />
+            <a href="/Logics/RequestLogic/List" class="btn btn-outline-primary">Back to List of PO</a>
+        </div>
     </form>
 
 </div>
+
+
+   

@@ -46,13 +46,10 @@ namespace ApprovalProcess.Pages.Logics
         {
 
             RequestObj.RequestedDate = DateTime.Now;
-            
-            RequestObj.Status.Name = "Pending";
-                       
 
             if (ModelState.IsValid)
             {
-                RequestObj.Status.Name = "Pending";
+                
                 if (RequestObj.Image != null)
                 {
                     var image = RequestObj.Image;
