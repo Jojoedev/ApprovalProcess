@@ -44,9 +44,8 @@ namespace ApprovalProcess.Pages.Logics
         }
         public ActionResult OnPost(Request RequestObj)
         {
-
             RequestObj.RequestedDate = DateTime.Now;
-
+           
             if (ModelState.IsValid)
             {
                 
@@ -61,20 +60,28 @@ namespace ApprovalProcess.Pages.Logics
                     image.CopyToAsync(new FileStream(FilePath, FileMode.Create));
                     
                     //OR
-
                    // FileStream fileStream = new FileStream(FilePath, FileMode.Create);
                     //image.CopyToAsync(fileStream);
                 }
-
                 _Context.Add(RequestObj);
                 _Context.SaveChanges();
                 Statics.ExportToExcel.ToExcel();
-                RedirectToPage("/Logics/RequestLogic/List");
+
+                /*if (RequestObj.RequestAmount <= 1000000)
+                {
+                  return RedirectToPage("/Logics/RequestLogic/List");
+                }
+
+                else if (RequestObj.RequestAmount > 1000000)
+                {
+                  return RedirectToPage("/Logics/RequestLogic/Approval");
+                }*/
+
+                return RedirectToPage("/Logics/RequestLogic/DefaultList");
+
             }
-            //DeptDropDown = new SelectList(_Context.Departments.ToList(), "Id", "Name");
-           return RedirectToPage("/Logics/RequestLogic/List");
-            //return Page();
-            
+            return RedirectToPage("/Logics/RequestLogic/DefaultList");
+
         }
 
         public void LoadDropDown()

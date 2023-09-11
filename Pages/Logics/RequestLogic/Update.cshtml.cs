@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ApprovalProcess.Pages.Logics
 {
-    [Authorize(Roles = "IT, CTO, MD")]
+    [Authorize(Roles = "IT, Line Manager")]
     public class UpdateModel : PageModel
     {
         private readonly ApplicationDbContext _context;
@@ -35,7 +35,7 @@ namespace ApprovalProcess.Pages.Logics
             {
                 LoadData();
                 request = _context.Requests.Where(x => x.RequestId == id).FirstOrDefault();
-                int a = request.RequestId;
+               
             }
             return Page();
         }
@@ -52,19 +52,20 @@ namespace ApprovalProcess.Pages.Logics
                 _context.Entry(request).Property(x => x.RequesterName).IsModified = false;
                _context.Entry(request).Property(x => x.RequestedDate).IsModified = false;
                 _context.Entry(request).Property(x => x.DepartmentId).IsModified = false;
-                _context.Entry(request).Property(x => x.RequestDescription).IsModified = false;
+                _context.Entry(request).Property(x => x.RequestDescription).IsModified = true;
                 _context.Entry(request).Property(x => x.RequestAmount).IsModified = true;
                 _context.Entry(request).Property(x => x.VendorId).IsModified = false;
                 _context.Entry(request).Property(x => x.SupportingDoc).IsModified = false;
                 _context.Entry(request).Property(x => x.StatusId).IsModified = true;
                 _context.Entry(request).Property(x => x.Remark).IsModified = true;
-
-
+                _context.Entry(request).Property(x => x.LineManager).IsModified = true;
+                
+                
                 _context.SaveChanges();
 
             }
 
-            return RedirectToPage("List");
+            return RedirectToPage("DefaultList");
         }
 
         public void LoadData()

@@ -146,7 +146,6 @@ C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\ne
 C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\ApprovalProcess.RazorAssemblyInfo.cs
 C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\staticwebassets\ApprovalProcess.StaticWebAssets.Manifest.cache
 C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\staticwebassets\ApprovalProcess.StaticWebAssets.xml
-C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\scopedcss\bundle\ApprovalProcess.styles.css
 C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\ApprovalProcess.TagHelpers.input.cache
 C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\ApprovalProcess.TagHelpers.output.cache
 C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\ApprovalProcess.RazorCoreGenerate.cache
@@ -160,6 +159,8 @@ C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\ne
 C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\Razor\Pages\Logics\DeptLogic\Create.cshtml.g.cs
 C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\Razor\Pages\Logics\DeptLogic\Delete.cshtml.g.cs
 C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\Razor\Pages\Logics\DeptLogic\Index.cshtml.g.cs
+C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\Razor\Pages\Logics\FApproverLogic\Create.cshtml.g.cs
+C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\Razor\Pages\Logics\FApproverLogic\List.cshtml.g.cs
 C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\Razor\Pages\Logics\RequestLogic\Create.cshtml.g.cs
 C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\Razor\Pages\Logics\RequestLogic\Delete.cshtml.g.cs
 C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\Razor\Pages\Logics\RequestLogic\List.cshtml.g.cs
@@ -183,5 +184,8 @@ C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\ne
 C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\ApprovalProcess.dll
 C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\ApprovalProcess.pdb
 C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\ApprovalProcess.genruntimeconfig.cache
-C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\Razor\Pages\Logics\FApproverLogic\List.cshtml.g.cs
-C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\Razor\Pages\Logics\FApproverLogic\Create.cshtml.g.cs
+C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\Razor\Pages\Logics\RequestLogic\Approval.cshtml.g.cs
+C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\Razor\Pages\Logics\RequestLogic\LastApproval.cshtml.g.cs
+C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\Razor\Pages\Logics\RequestLogic\DefaultList.cshtml.g.cs
+C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\Razor\Pages\Logics\RequestLogic\ApprovalUpdate.cshtml.g.cs
+C:\Users\HP\Desktop\CSharp projects\ApprovalProcess\ApprovalProcess\obj\Debug\netcoreapp3.1\Razor\Pages\Logics\RequestLogic\LastApprovalUpdate.cshtml.g.cs

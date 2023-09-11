@@ -59,6 +59,12 @@ namespace ApprovalProcess.Models
         public virtual FirstApprover FirstApprover { get; set; }
 
 
+        //Approvals
+
+        public string LineManager { get; set; }
+        public string FinanceDirector { get; set; }
+        public string ManagingDirector { get; set; }
+
 
     }
         

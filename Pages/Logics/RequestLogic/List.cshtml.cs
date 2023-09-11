@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ApprovalProcess.Pages
 {
-    /*[Authorize(Policy = "RequireAdmin")]*/
+    [Authorize(Roles ="IT, Line Manager")]
     public class ListModel : PageModel
     {
         private readonly ApplicationDbContext _Context;
@@ -30,7 +30,7 @@ namespace ApprovalProcess.Pages
         public List<Request> RequestObj { get; set; }
         public void OnGet()
         {
-                 RequestObj = _Context.Requests
+                 RequestObj = _Context.Requests.OrderByDescending(x =>x.RequestedDate)
                 .Include(a => a.Vendor)
                 .Include(x => x.Department)
                 .Include(y => y.Status)

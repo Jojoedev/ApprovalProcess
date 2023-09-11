@@ -3,6 +3,7 @@
 @{
 }
 
+
 <div>
     <form method="post" class="form-group">
         <div>
@@ -51,20 +52,37 @@
         </div>
 
         <div>
-            <label asp-for="@Model.request.StatusId" class="form-control"></label>
-            <select asp-for="@Model.request.StatusId" class="form-control" asp-items="Model.StatusDropDown" >
+            <label  asp-for="@Model.request.StatusId" style="color:Red;" class="form-control"></label>
+            <select  asp-for="@Model.request.StatusId" style="color:seagreen;" class="form-control" asp-items="Model.StatusDropDown" >
                 <option>Select Status</option>
             </select>
         </div>
 
         <div>
+            <label asp-for="@Model.request.LineManager" class="form-control"></label>
+            <input asp-for="@Model.request.LineManager"  class="form-control" />
+        </div>
+
+        @*<div>
+            <label asp-for="@Model.request.FinanceDirector" class="form-control"></label>
+            <input asp-for="@Model.request.FinanceDirector"  class="form-control" />
+        </div>
+       <div>
+            <label asp-for="@Model.request.ManagingDirector" class="form-control"></label>
+            <input asp-for="@Model.request.ManagingDirector"  class="form-control" />
+        </div>*@
+        <div>
             <label asp-for="@Model.request.Remark" class="form-control"></label>
             <input asp-for="@Model.request.Remark" class="form-control" />
         </div>
-
+        
 
         <br />
         <div> <input type="submit" name="name" value="Submit" class="btn btn-primary" /> </div>
     </form>
 
 </div>
+
+<script src="/js/status.js">
+
+</script>

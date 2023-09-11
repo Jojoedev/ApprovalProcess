@@ -135,8 +135,17 @@ namespace ApprovalProcess.Data.Migrations
                     b.Property<int?>("DepartmentId")
                         .HasColumnType("int");
 
+                    b.Property<string>("FinanceDirector")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("FirstApproverId")
                         .HasColumnType("int");
+
+                    b.Property<string>("LineManager")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ManagingDirector")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Remark")
                         .HasColumnType("nvarchar(max)");
